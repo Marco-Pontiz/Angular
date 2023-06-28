@@ -10,7 +10,7 @@ export class RoundedBlockDirective {
     ) {
     console.log(this.elementRef);
 
-    //this.renderer.setStyle(this.elementRef, "border-radius", "100px");
+    this.renderer.setStyle(this.elementRef.nativeElement, "border-radius", "100px");
   }
 
 }
