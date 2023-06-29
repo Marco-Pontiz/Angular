@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  title = "Lista de Alumnos";
+  title = "Bienvenidos";
   myFontSize = "2rem";
 }

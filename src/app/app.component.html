@@ -6,16 +6,16 @@
 <table>
 <thead>
     <tr>
-        <th>#ID</th>
+        <th>ID</th>
         <th>NOMBRE</th>
         <th>APELLIDO</th>
     </tr>
 </thead>
 <tbody>
-    <tr>
-        <td>1</td>
-        <td>josue</td>
-        <td>labechi</td>
+    <tr *ngFor ="let alumno of alumnos; let i = index" [ngClass]="i % 2 === 0 ? 'evenBg': 'oddBg'">
+        <td>{{i}}</td>
+        <td>{{alumno.nombre}}</td>
+        <td>{{alumno.apellido}}</td>
     </tr>
 </tbody>
 </table>
