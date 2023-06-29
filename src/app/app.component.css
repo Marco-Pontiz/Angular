@@ -14,3 +14,7 @@ td{
 .wall-green {
     background-color:rgb(116, 176, 126);
 }
+
+.date{
+    padding:0.3rem;
+}
