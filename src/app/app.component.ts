@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Proyecto-Angular';
   sub_title = "Alumnos";
+  date = new Date;
   alumnos : {id: number, nombre: string, apellido: string}[] = [
     {id: 1, nombre: "Nicolai" , apellido: "Belinsky"},
     {id: 2, nombre: "Edward", apellido: "Richtofen"},
