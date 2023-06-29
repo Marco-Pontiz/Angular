@@ -1,3 +1,12 @@
+.tabla-alumnos {
+    padding:1rem
+}
+
+td{
+    padding:0.3rem
+}
+
 .wall-green {
     background-color:rgb(116, 176, 126);
+    border-color: black;
 }
