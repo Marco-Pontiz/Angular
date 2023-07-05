@@ -7,6 +7,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainWrapperComponent } from './main-wrapper/main-wrapper.component';
 import { RoundedBlockDirective } from './directives/rounded-block.directive';
 import { DraggableDirective } from './directives/draggable.directive';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { DraggableDirective } from './directives/draggable.directive';
     SidebarComponent,
     MainWrapperComponent,
     RoundedBlockDirective,
-    DraggableDirective
+    DraggableDirective,
+    ReactiveFormComponent,
   ], //AppComponent pertenece a AppModule
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
