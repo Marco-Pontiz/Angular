@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -8,7 +7,6 @@ import { MainWrapperComponent } from './main-wrapper/main-wrapper.component';
 import { RoundedBlockDirective } from './directives/rounded-block.directive';
 import { DraggableDirective } from './directives/draggable.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -21,8 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms'
     ReactiveFormComponent,
   ], //AppComponent pertenece a AppModule
   imports: [
-    BrowserModule,
-    ReactiveFormsModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
