@@ -9,6 +9,7 @@ import { RoundedBlockDirective } from './directives/rounded-block.directive';
 import { DraggableDirective } from './directives/draggable.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    DashboardModule,
     BrowserAnimationsModule
   ],
   providers: [],
