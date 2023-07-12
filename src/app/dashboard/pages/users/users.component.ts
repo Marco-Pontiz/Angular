@@ -1,5 +1,5 @@
 import {  Component } from '@angular/core';
-import {  FormGroup, FormControl } from '@angular/forms';
+import {  FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-users',
@@ -7,9 +7,12 @@ import {  FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent {
-  nameControl = new FormControl();
+  nameControl = new FormControl(null, [
+    Validators.required, 
+    Validators.minLength(3)
+  ]);
   surnameControl = new FormControl();
-  emailControl = new FormControl();
+  emailControl = new FormControl(null, [Validators.required]);
   passwordControl = new FormControl();
 
   usersForm = new FormGroup({
@@ -18,4 +21,8 @@ export class UsersComponent {
     email: this.emailControl,
     password: this.passwordControl
   });
+
+  onSubmit(): void {
+    alert(JSON.stringify(this.usersForm.value));
+  }
 }
