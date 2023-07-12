@@ -10,6 +10,7 @@ import { DraggableDirective } from './directives/draggable.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     BrowserModule,
     ReactiveFormsModule,
     DashboardModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

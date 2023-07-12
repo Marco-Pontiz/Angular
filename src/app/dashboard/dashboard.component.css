@@ -10,3 +10,7 @@
     padding: 20px;
     width: 200px;
 }
+
+main{
+    min-height: calc(100vh - 64px);
+}
