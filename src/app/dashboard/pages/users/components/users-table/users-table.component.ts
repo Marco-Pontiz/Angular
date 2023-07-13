@@ -1,4 +1,5 @@
 import {  Component, Input } from '@angular/core';
+import {  Usuario } from '../../models/index';
 
 @Component({
   selector: 'app-users-table',
@@ -9,5 +10,5 @@ export class UsersTableComponent {
   displayedColumns: string[] = ['id', 'name', 'surname', 'email'];
 
   @Input()
-  dataSource = [];
+  dataSource: Usuario[] = []; 
 }
