@@ -1,9 +1,11 @@
 <mat-drawer-container class="example-container" autosize>
 
     <!-- Sidebar-->
-
     <mat-drawer [mode]="'over'" #drawer class="example-sidenav" mode="side">
-
+        <button (click)="onCreateUser()" mat-flat-button color="primary" type="button">
+            <mat-icon>add</mat-icon>
+            Añadir Alumno
+        </button>
     </mat-drawer>
 
     <!-- Fin del Sidebar -->

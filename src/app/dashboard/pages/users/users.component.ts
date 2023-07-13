@@ -9,24 +9,5 @@ import { nombreValidator } from 'src/app/shared/utils/form-validators';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent {
-  nameControl = new FormControl(null, [
-    Validators.required, 
-    Validators.minLength(3),
-    noNombreValidator(),
-    nombreValidator(),
-  ]);
-  surnameControl = new FormControl();
-  emailControl = new FormControl(null, [Validators.required]);
-  passwordControl = new FormControl();
 
-  usersForm = new FormGroup({
-    name: this.nameControl,
-    surname: this.surnameControl,
-    email: this.emailControl,
-    password: this.passwordControl
-  });
-
-  onSubmit(): void {
-    alert(JSON.stringify(this.usersForm.value));
-  }
 }
