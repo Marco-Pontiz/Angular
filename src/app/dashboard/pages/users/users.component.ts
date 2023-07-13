@@ -1,5 +1,7 @@
 import {  Component } from '@angular/core';
-import {  FormGroup, FormControl, Validators } from '@angular/forms';
+import {  FormGroup, FormControl, Validators, ValidatorFn, AbstractControl, FormArray, ValidationErrors } from '@angular/forms';
+import { noNombreValidator } from 'src/app/shared/utils/form-validators';
+import { nombreValidator } from 'src/app/shared/utils/form-validators';
 
 @Component({
   selector: 'app-users',
@@ -9,7 +11,9 @@ import {  FormGroup, FormControl, Validators } from '@angular/forms';
 export class UsersComponent {
   nameControl = new FormControl(null, [
     Validators.required, 
-    Validators.minLength(3)
+    Validators.minLength(3),
+    noNombreValidator(),
+    nombreValidator(),
   ]);
   surnameControl = new FormControl();
   emailControl = new FormControl(null, [Validators.required]);

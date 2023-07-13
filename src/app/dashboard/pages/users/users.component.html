@@ -1,4 +1,5 @@
 <form [formGroup]="usersForm" class="grid" action="">
+    
     <div class="col-6 field">
         <mat-form-field class="w-full" appearance="outline">
             <mat-label>Nombre</mat-label>
@@ -8,6 +9,12 @@
                 </mat-error>
                 <mat-error *ngIf="nameControl.hasError('minlength')">
                     El campo solicita tener más de {{ nameControl.errors?.['minlength']?.requiredLength }} caracteres.
+                </mat-error>
+                <mat-error *ngIf="nameControl.hasError('noNombre')">
+                    Ese nombre no es aceptable
+                </mat-error>
+                <mat-error *ngIf="nameControl.hasError('noUpperCase')">
+                    Debe de tener por lo menos una mayúscula
                 </mat-error>
         </mat-form-field>
         <pre>{{ nameControl.errors | json }}</pre>
@@ -24,6 +31,9 @@
         <mat-form-field class="w-full" appearance="outline">
             <mat-label>Email</mat-label>
             <input [formControl]="emailControl" matInput type="email" name="email">
+            <mat-error *ngIf="nameControl.hasError('required')">
+                Este campo es requerido
+            </mat-error>
         </mat-form-field>
     </div>
 
@@ -31,6 +41,9 @@
         <mat-form-field class="w-full" appearance="outline">
             <mat-label>Contraseña</mat-label>
             <input formControlName="password" matInput type="password" name="password">
+            <mat-error *ngIf="nameControl.hasError('required')">
+                Este campo es requerido
+            </mat-error>
         </mat-form-field>
     </div>
 
