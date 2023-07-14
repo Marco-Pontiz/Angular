@@ -20,42 +20,29 @@ export class UsersComponent {
   public users: Usuario[] = ELEMENT_DATA;
 
   constructor(
-    private MatDialog: MatDialog
+    private dialog: MatDialog
   ) {}
 
-  onCreateUser(): void{
-  this.MatDialog
-  .open(UserFormDialogComponent)
-  .afterClosed()
-  .subscribe({
-    next: (v) => {
-      if(v) {
-        this.users = [
-          ...this.users,
-          {
-            id: this.users.length + 1,
-            name: v.name ,
-            surname: v.surname ,
-            email: v.email,
-            password: v.password,
+  onCreateUser(): void {
+    this.dialog
+      .open(UserFormDialogComponent)
+      .afterClosed()
+      .subscribe({
+        next: (v) => {
+          if (v) {
+            this.users.push({
+              id: this.users.length + 1,
+              name: v.name,
+              surname: v.surname,
+              email: v.email,
+              password: v.password,
+            });
+
+            console.log('Alumno Recibido:', v);
+          } else {
+            console.log('Proceso Cancelado...');
           }
-        ]
-
-
-        // this.users.push(
-        //   {
-        //     id: this.users.length + 1,
-        //     name: v.name ,
-        //     surname: v.surname ,
-        //     email: v.email,
-        //     password: v.password,
-        //   }
-        // )
-      console.log('Alumno Recibido!: ', v );
-      } else {
-        console.log('Proceso Cancelado...');
-      }
-    }
-  })
+        }
+      });
   }
 }

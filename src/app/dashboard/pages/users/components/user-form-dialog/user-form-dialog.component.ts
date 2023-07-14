@@ -1,7 +1,7 @@
-import {  Component } from '@angular/core';
-import {  MatDialogRef } from '@angular/material/dialog';
-import {  FormControl, Validators, FormGroup } from '@angular/forms';
-import {  noNombreValidator, nombreValidator } from 'src/app/shared/utils/form-validators';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { noNombreValidator, nombreValidator } from 'src/app/shared/utils/form-validators';
 
 @Component({
   selector: 'app-user-form-dialog',
@@ -10,7 +10,7 @@ import {  noNombreValidator, nombreValidator } from 'src/app/shared/utils/form-v
 })
 export class UserFormDialogComponent {
   nameControl = new FormControl(null, [
-    Validators.required, 
+    Validators.required,
     Validators.minLength(3),
     noNombreValidator(),
     nombreValidator(),
@@ -26,13 +26,20 @@ export class UserFormDialogComponent {
     password: this.passwordControl
   });
 
-  constructor(private dialogRef: MatDialogRef<UserFormDialogComponent>) {} 
+  constructor(private dialogRef: MatDialogRef<UserFormDialogComponent>) { }
 
   onSubmit(): void {
-    if(this.usersForm.invalid) {
+    if (this.usersForm.invalid) {
       this.usersForm.markAllAsTouched();
     } else {
-      this.dialogRef.close(this.usersForm.value);
+      const formValue = this.usersForm.value;
+      this.dialogRef.close(formValue);
+      console.log('Alumno Recibido:', formValue);
     }
+  }
+
+  onCancel(): void {
+    console.log('Proceso Cancelado...');
+    this.dialogRef.close();
   }
 }
