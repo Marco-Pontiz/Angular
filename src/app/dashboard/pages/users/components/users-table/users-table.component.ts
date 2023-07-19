@@ -1,5 +1,5 @@
-import {  Component, Input } from '@angular/core';
-import {  Usuario } from '../../models/index';
+import { Component, Input } from '@angular/core';
+import { Usuario } from '../../models/index';
 
 @Component({
   selector: 'app-users-table',
@@ -7,8 +7,8 @@ import {  Usuario } from '../../models/index';
   styleUrls: ['./users-table.component.css']
 })
 export class UsersTableComponent {
-  displayedColumns: string[] = ['id', 'name', 'surname', 'email'];
-
   @Input()
-  dataSource: Usuario[] = []; 
+  dataSource: Usuario[] = [];
+
+  displayedColumns: string[] = ['id', 'name', 'surname', 'email'];
 }

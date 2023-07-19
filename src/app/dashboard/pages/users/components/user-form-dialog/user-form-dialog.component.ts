@@ -1,7 +1,14 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { noNombreValidator, nombreValidator } from 'src/app/shared/utils/form-validators';
+
+export interface UserFormData {
+  name: string;
+  surname: string;
+  email: string;
+  password: string;
+}
 
 @Component({
   selector: 'app-user-form-dialog',
@@ -26,7 +33,10 @@ export class UserFormDialogComponent {
     password: this.passwordControl
   });
 
-  constructor(private dialogRef: MatDialogRef<UserFormDialogComponent>) { }
+  constructor(
+    private dialogRef: MatDialogRef<UserFormDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: UserFormData
+  ) {}
 
   onSubmit(): void {
     if (this.usersForm.invalid) {
@@ -34,7 +44,7 @@ export class UserFormDialogComponent {
     } else {
       const formValue = this.usersForm.value;
       this.dialogRef.close(formValue);
-      console.log('Alumno Recibido:', formValue);
+      console.log('Usuario Recibido:', formValue);
     }
   }
 
